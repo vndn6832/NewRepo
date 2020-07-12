@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<queue>
 #include<vector>
 using namespace std;
@@ -38,8 +38,9 @@ int main() {
 			pq.pop();
 		}
 		cout << print << endl;
-		//¼öÁ¤
-		//ÇÑ±Û
+		//ìˆ˜ì •
+		//í•œê¸€
+		
 
 	}
 }
