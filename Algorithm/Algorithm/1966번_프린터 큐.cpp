@@ -2,44 +2,51 @@
 #include<queue>
 #include<vector>
 using namespace std;
-struct cmp {
-	bool operator()(pair<int, int> a, pair<int, int> b) {
-		if (a.first != b.first) {
-			return a.first < b.first;
-		}
-		else {
-			return a.second >= b.second;
-		}
-	}
-};
-priority_queue< pair<int, int>, vector<pair<int, int>>, cmp> pq;
 int main() {
 	int t;
 	cin >> t;
 	for (int i = 0; i < t; i++) {
 
 		int n, m;
+		int order = 0;
 		cin >> n >> m;
 
+		priority_queue<int> pq;
+		queue<pair<int, int>> q;
+
 		for (int j = 0; j < n; j++) {
-			int x = 0;
+			int x;
 			cin >> x;
-			pq.push(make_pair(x, j));
+			q.push({ x, j });
+			pq.push(x);
 		}
 
-		int print = 0;
-		int order = 0;
-		while (!pq.empty())
+		
+		while (!q.empty())
 		{
-			order++;
-			if (pq.top().second == m) {
-				print = order;
+			int nowIdx = q.front().second;
+			int nowVal = q.front().first;
+
+
+			if (nowVal == pq.top()) {
+				//q.pop();
+				pq.pop();
+				order++;
+				if (nowIdx == m) {
+					cout << order << endl;
+					break;
+				}
 			}
-			pq.pop();
+			else {
+				//q.pop();
+				q.push(make_pair(nowVal, nowIdx));
+			}
+
+			q.pop();
+			
 		}
-		cout << print << endl;
-		//수정
-		//한글
+		
+		
 		
 
 	}
