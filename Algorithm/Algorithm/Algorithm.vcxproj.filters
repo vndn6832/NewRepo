@@ -45,5 +45,8 @@
     <ClCompile Include="1946번_신입사원.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="_크레인 인형뽑기 게임.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
