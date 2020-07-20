@@ -57,5 +57,8 @@
     <ClCompile Include="9012번_괄호_간단하게_C.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="1874번_스택 수열.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
