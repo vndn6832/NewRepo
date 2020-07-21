@@ -72,5 +72,8 @@
     <ClCompile Include="1152번_단어의 개수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="4949번_균형잡힌 세상.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
