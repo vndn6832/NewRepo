@@ -75,5 +75,8 @@
     <ClCompile Include="4949번_균형잡힌 세상.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="2178번_미로 탐색.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
