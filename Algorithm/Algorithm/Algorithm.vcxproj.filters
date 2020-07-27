@@ -87,5 +87,8 @@
     <ClCompile Include="1260번_DFS와 BFS.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="2267번_단지번호붙이기_DFS.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
