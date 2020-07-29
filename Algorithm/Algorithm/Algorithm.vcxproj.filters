@@ -93,5 +93,17 @@
     <ClCompile Include="1012번_유기농 배추.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="14502번_연구소.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="조합_DFS.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="14502번_연구소_방법2_visited.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="14502번_연구소_방법3_시간단축.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
