@@ -105,5 +105,14 @@
     <ClCompile Include="14502번_연구소_방법3_시간단축.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="17141번_연구소2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="17141번_연구소2_2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="17141번_연구소2_3.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
