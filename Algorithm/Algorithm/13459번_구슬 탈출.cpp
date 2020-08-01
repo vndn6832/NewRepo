@@ -50,7 +50,7 @@ void bfs() {
 			int Nbx = bx + dx[i];
 			int Nby = by + dy[i];
 
-			if (Nrx <= 1 || Nrx >= n - 1 || Nbx <= 1 || Nby >= m - 1) continue;
+			if (Nrx <= 0 || Nrx >= n || Nbx <= 0 || Nby >= m) continue;
 			if (map[Nrx][Nry] == '#') {
 				Nrx = rx;
 				Nry = ry;
@@ -95,6 +95,13 @@ int main() {
 				zeroY = j;
 			}
 		}
+	}
+
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			cout << map[i][j];
+		}
+		cout << endl;
 	}
 	
 	bfs();
