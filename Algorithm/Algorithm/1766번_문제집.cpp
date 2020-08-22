@@ -8,7 +8,7 @@ int n, m;
 void sort() {
 	priority_queue<int, vector<int>, greater<int>> pq;
 
-	for (int i = 1; i <= n; i++) {
+	for (int i = 1; i <= n; i++) { 
 		if (inDegree[i] == 0) {
 			pq.push(i);
 		}

@@ -17,9 +17,9 @@ int main() {
 		for (int j = 0; j < n; j++) {
 			int x;
 			cin >> x;
-			q.push({ x, j });
-			pq.push(x);
-		}
+			q.push({ x, j }); //중요도,위치
+			pq.push(x); //중요도만
+		} 
 
 		
 		while (!q.empty())
