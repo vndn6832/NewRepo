@@ -132,5 +132,11 @@
     <ClCompile Include="INF_76_이항계수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="INF_77_친구인가.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="INF_77_친구인가_UNION_FIND.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
