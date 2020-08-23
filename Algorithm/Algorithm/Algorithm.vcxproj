@@ -228,7 +228,10 @@
     <ClCompile Include="INF_77_친구인가.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="INF_77_친구인가_UNION_FIND.cpp" />
+    <ClCompile Include="INF_77_친구인가_UNION_FIND.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="INF_78_원더랜드_Kruskal MST 알고리즘.cpp" />
     <ClCompile Include="_크레인 인형뽑기 게임.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
