@@ -144,5 +144,11 @@
     <ClCompile Include="INF_82_순열.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="INF_84_휴가_SSSW.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="INF_84_휴가_SSSW_강의.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
