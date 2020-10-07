@@ -1,0 +1,9 @@
+8
+dog
+cat
+cow
+dog
+cow
+cat
+dog
+dog
