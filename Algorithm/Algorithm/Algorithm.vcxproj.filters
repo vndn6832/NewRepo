@@ -201,5 +201,11 @@
     <ClCompile Include="INF_STL_MAP_단어수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="19236번_청소년 상어_2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="19236번_청소년 상어_3.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
