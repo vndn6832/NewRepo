@@ -213,5 +213,11 @@
     <ClCompile Include="17779번_게리맨더링 2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="INF_11_숫자의 총 개수.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="INF_12_숫자의 총 개수.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
