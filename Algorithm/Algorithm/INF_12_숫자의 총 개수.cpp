@@ -1,14 +1,13 @@
 #include<stdio.h>
 int main() {
-	int num;
-	int cnt = 0;
-	scanf("%d", &num);
-	for (int i = 1; i <= num; i++) {
-		int a = i;
-		while (a > 0) {
-			a = a / 10;
-			cnt++;
-		}
+	int num, sum=0, cnt = 1, digit = 9, res = 0;
+	scanf_s("%d", &num);
+	while (sum + digit < num) {
+		sum = sum + digit;
+		res = res + (cnt*digit);
+		cnt++;
+		digit = digit * 10;
 	}
-	printf("%d", cnt);
+	res = res + ((num - sum) * cnt);
+	printf("%d", res);
 }
