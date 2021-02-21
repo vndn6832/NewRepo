@@ -17,20 +17,20 @@ int minVal = INT_MAX;
 int maxVal;
 void BFS() {
 	check = false;
-	memset(visited, false, sizeof(visited));
-	queue<pair<int, int>> q;
+	memset(visited, false, sizeof(visited)); //방문 배열 초기화
+	queue<pair<int, int>> q; //큐
 
 	for (int i = 0; i < virus.size(); i++) {
-		map[virus[i].first][virus[i].second] = 0;
-		visited[virus[i].first][virus[i].second] = true;
-		q.push(make_pair(virus[i].first, virus[i].second));
+		map[virus[i].first][virus[i].second] = 0; //빈칸
+		visited[virus[i].first][virus[i].second] = true; //방문
+		q.push(make_pair(virus[i].first, virus[i].second)); 
 	}
 
 	while (!q.empty()) {
 		int x = q.front().first;
 		int y = q.front().second;
 
-		q.pop();
+		q.pop(); //***
 
 		for (int i = 0; i < 4; i++) {
 			int nx = x + dx[i];
@@ -38,9 +38,9 @@ void BFS() {
 
 			if (nx < 0 || nx >= n || ny < 0 || ny >= n) continue;
 
-			if (visited[nx][ny] == false && map2[nx][ny] != 1) {//*map2
+			if (visited[nx][ny] == false && map2[nx][ny] != 1) {//*map2 1은 벽
 				visited[nx][ny] = true;
-				map[nx][ny] = map[x][y] + 1;
+				map[nx][ny] = map[x][y] + 1; //+1 (시간측정)
 				q.push(make_pair(nx, ny));
 
 				if (map2[nx][ny] == 0) {//*map2
@@ -71,15 +71,15 @@ void BFS() {
 
 }
 void DFS(int index, int level) {
-	if (level == m) {
-		BFS();
+	if (level == m) { //m개 선택
+		BFS(); //퍼뜨리기
 		return;
 	}
 
 	for (int i = index; i < (int)choose.size(); i++) {
-		virus.push_back(make_pair(choose[i].first, choose[i].second));
-		DFS(i + 1, level + 1);
-		virus.pop_back();
+		virus.push_back(make_pair(choose[i].first, choose[i].second)); //바이러스 선택
+		DFS(i + 1, level + 1); //인데스 증가, 갯수증가
+		virus.pop_back(); //바이러스 선택 해제
 	}
 }
 int main() {
