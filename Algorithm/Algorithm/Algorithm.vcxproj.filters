@@ -219,5 +219,8 @@
     <ClCompile Include="INF_12_숫자의 총 개수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="INF_14_뒤집은 소수.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
