@@ -8,6 +8,7 @@ int main() {
 		cnt++;
 		digit = digit * 10;
 	}
+
 	res = res + ((num - sum) * cnt);
 	printf("%d", res);
 }
