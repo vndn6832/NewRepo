@@ -246,5 +246,17 @@
     <ClCompile Include="15683번_감시.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="INF_70_그래프 최단거리(BFS).cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="INF_71_송아지 찾기(BFS 상태트리탐색).cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="INF_72_공주 구하기 (큐).cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="INF_72_공주 구하기 (큐)_2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
