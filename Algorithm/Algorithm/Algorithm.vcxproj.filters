@@ -264,5 +264,8 @@
     <ClCompile Include="14503번__로봇 청소기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="15686번_치킨 배달.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
