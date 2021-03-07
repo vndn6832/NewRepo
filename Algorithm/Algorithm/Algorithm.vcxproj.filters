@@ -261,5 +261,8 @@
     <ClCompile Include="14888번__연산자 끼워넣기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="14503번__로봇 청소기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
