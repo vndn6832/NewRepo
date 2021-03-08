@@ -1,10 +1,9 @@
 #include<iostream>
 #include<vector>
 #include<limits.h>
-#include<cmath>
 using namespace std;
 int N;
-bool ch[20]; //√ ±‚»≠ ***
+bool ch[20]; 
 int map[20][20];
 int minVal = INT_MAX;
 int cal(vector<int> tmp) {
@@ -14,15 +13,9 @@ int cal(vector<int> tmp) {
 			ret += map[tmp[i]][tmp[j]];
 		}
 	}
-	cout << "*** " << tmp.size()<<endl;
-	cout << ret << endl;
 	return ret;
 }
-void init() {
-	for (int i = 0; i < N; i++) {
-		ch[i] = false;
-	}
-}
+
 void DFS(int idx, int cnt) {
 	if (cnt == N / 2) {
 		vector<int> v1;
@@ -33,17 +26,15 @@ void DFS(int idx, int cnt) {
 			if (ch[i] == true) {
 
 				v1.push_back(i);
-				cout<< "1 ";
 			}
 			else {
 				v2.push_back(i);
-				cout << "0 ";
+
 			}
 
 
 		}
-			cout<< endl;
-			init();
+
 		if (minVal > abs(cal(v1) - cal(v2))) {
 			minVal = abs(cal(v1) - cal(v2));
 
@@ -71,6 +62,4 @@ int main() {
 	DFS(0, 0);
 	cout << minVal << endl;
 }
-
-
 
