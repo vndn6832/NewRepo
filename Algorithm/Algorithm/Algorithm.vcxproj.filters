@@ -267,5 +267,8 @@
     <ClCompile Include="15686번_치킨 배달.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="15686번__치킨 배달_2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
