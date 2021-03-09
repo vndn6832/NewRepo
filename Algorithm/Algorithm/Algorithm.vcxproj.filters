@@ -294,5 +294,8 @@
     <ClCompile Include="프로그래머스 크레인 인행뽑기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="프로그래머스 신규 아이디 추천.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
