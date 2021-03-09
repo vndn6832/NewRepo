@@ -282,5 +282,8 @@
     <ClCompile Include="17140번_이차원 배열과 연산_정리.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="2589번_보물섬.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
