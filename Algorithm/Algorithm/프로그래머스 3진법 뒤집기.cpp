@@ -20,3 +20,7 @@ int solution(int n) {
 
 	return answer;
 }
+
+int main() {
+	cout << solution(45) << endl;
+}
