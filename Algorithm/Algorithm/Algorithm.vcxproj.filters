@@ -300,5 +300,8 @@
     <ClCompile Include="프로그래머스 문자열 내 마음대로 정렬하기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="17142번__연구소3.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
