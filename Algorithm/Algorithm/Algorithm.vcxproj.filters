@@ -315,5 +315,8 @@
     <ClCompile Include="프로그래머스 서울에서 김서방 찾기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="17141번_연구소 2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
