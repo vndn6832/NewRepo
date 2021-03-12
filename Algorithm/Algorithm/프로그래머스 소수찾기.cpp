@@ -5,19 +5,18 @@ using namespace std;
 
 int solution(int n) {
 	int answer = 0;
-	vector<int> v(n);
-
+	vector<bool> v(n);
 	for (int i = 2; i <= n; i++) {
 		for (int j = i * 2; j <= n; j += i) {
-			if (v[j - 1] == 1) continue;
-			v[j - 1] = 1;
+			if (v[j - 1] == true) continue;
+			v[j - 1] = true;
 		}
 	}
 
-	for (int i = 2; i <= n; i++) {
-		if (v[i - 1] != 1) answer++;
+	for (int i = 1; i < v.size(); i++) {
+		if (v[i] != true)
+			answer++;
 	}
-
 	return answer;
 }
 
