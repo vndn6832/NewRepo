@@ -6,7 +6,7 @@ using namespace std;
 int solution(int n) {
 	int answer = 0;
 	vector<bool> v(n);
-	for (int i = 2; i <= n; i++) {
+	for (int i = 2; i*i <= n; i++) {
 		for (int j = i * 2; j <= n; j += i) {
 			if (v[j - 1] == true) continue;
 			v[j - 1] = true;
