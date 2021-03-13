@@ -1,9 +1,9 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 int unf[1001];
-int Find(int v) { //vÀÇ ÁýÇÕ¹øÈ£ return
+int Find(int v) { //vì˜ ì§‘í•©ë²ˆí˜¸ return
 	if (v == unf[v]) return v;
-	else return Find(unf[v]);
+	else return unf[v] = Find(unf[v]);
 }
 void Union(int a, int b) {
 	a = Find(a);
@@ -14,7 +14,7 @@ int main() {
 	int n, m, a, b, fa, fb;
 	cin >> n >> m;
 	for (int i = 1; i <= n; i++) {
-		unf[i] = i; //ÃÊ±âÈ­
+		unf[i] = i; //ì´ˆê¸°í™”
 	}
 
 	for (int i = 1; i <= m; i++) {
