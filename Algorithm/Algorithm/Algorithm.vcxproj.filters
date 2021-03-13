@@ -339,5 +339,8 @@
     <ClCompile Include="INF_76_이항계수(메모제이션).cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="INF_77번_친구인가(Union Find 자료구조).cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
