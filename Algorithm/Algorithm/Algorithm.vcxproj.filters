@@ -345,5 +345,8 @@
     <ClCompile Include="INF_78_원더랜드(Kruskal MST 알고리즘 Union Find 활용).cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="1717번_집합의 표현.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
