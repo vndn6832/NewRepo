@@ -339,7 +339,10 @@
     <ClCompile Include="INF_77_친구인가_UNION_FIND.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="INF_77번_친구인가(Union Find 자료구조).cpp" />
+    <ClCompile Include="INF_77번_친구인가(Union Find 자료구조).cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="INF_78_원더랜드(Kruskal MST 알고리즘 Union Find 활용).cpp" />
     <ClCompile Include="INF_78_원더랜드_Kruskal MST 알고리즘.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
