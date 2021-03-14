@@ -348,5 +348,8 @@
     <ClCompile Include="1717번_집합의 표현.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="INF_79번_원더랜드%28Prime MST 알고리즘 priority_queue 활용%29.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
