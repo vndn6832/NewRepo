@@ -357,5 +357,8 @@
     <ClCompile Include="5567번_결혼식.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="1753번_최단경로.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
