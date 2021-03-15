@@ -354,5 +354,8 @@
     <ClCompile Include="INF_80번_다익스트라 알고리즘.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="5567번_결혼식.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
