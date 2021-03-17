@@ -366,5 +366,8 @@
     <ClCompile Include="프로그래머스_괄호 변환.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="프로그래머스_문자열 압축.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
