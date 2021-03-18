@@ -44,3 +44,10 @@ vector<int> solution(int N, vector<int> stages) {
 
 	return answer;
 }
+
+int main() {
+	vector<int> ans;
+	ans = solution(5, { 2,1,2,6,2,4,3,3 });
+	for (int i = 0; i < ans.size(); i++)
+		cout << ans[i] << endl;
+}
