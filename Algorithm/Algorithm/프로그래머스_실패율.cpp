@@ -28,6 +28,10 @@ vector<int> solution(int N, vector<int> stages) {
 
 	int tmp = 0;
 	for (int i = 1; i <= N; i++) {
+		if (cnt[i] == 0) {
+			v.push_back(info(i, 0));
+			continue;
+		}
 		//cout << "* "<<cnt[i] <<", "<<stages.size()- tmp << endl;
 		double rate = (double)cnt[i] / (double)(stages.size() - tmp);//***나누기
 		//cout << "=> " <<rate << endl;
