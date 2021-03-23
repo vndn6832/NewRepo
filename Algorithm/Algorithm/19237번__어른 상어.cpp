@@ -142,7 +142,7 @@ void move(vector<shark> s) {
 		ans++;
 		//cout << cnt << endl;
 		if (cnt == 1) break;
-		if (ans == 1001) {
+		if (ans == 1000) {
 			ans = -1;
 			break;
 		}
