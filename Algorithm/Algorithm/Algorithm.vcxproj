@@ -267,6 +267,7 @@
     <ClCompile Include="19236번_청소년 상어_3.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="19237번__어른 상어.cpp" />
     <ClCompile Include="19237번_어른 상어.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
