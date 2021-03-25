@@ -120,7 +120,7 @@ int main() {
 			else {
 				s[k].dir = -1;
 			}
-
+			
 			
 			
 		}
