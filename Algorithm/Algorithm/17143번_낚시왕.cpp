@@ -1,5 +1,4 @@
-﻿//벽 두번 부딪히면?
-#include<iostream>
+﻿#include<iostream>
 #include<vector>
 using namespace std;
 int R, C, M;
@@ -79,6 +78,12 @@ int main() {
 
 			int nx = x;
 			int ny = y;
+			if (dir == 0 || dir == 1) {
+				speed = speed % (2* R - 2);
+			}
+			else {
+				speed = speed % (2 * C - 2);
+			}
 			for (int d = 0; d < speed; d++) {
 				nx += dx[dir];
 				ny += dy[dir];
