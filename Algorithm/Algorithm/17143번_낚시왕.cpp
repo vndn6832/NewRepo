@@ -121,41 +121,7 @@ int main() {
 				s[k].dir = -1;
 			}
 
-			/*
-			int nx = x + speed * dx[dir];
-			int ny = y + speed * dy[dir];
-			int sub = 0;
-
-			bool over = false;
-
-			if (nx < 0) {
-				sub = abs(nx);
-				over = true;
-			}
-			else if (nx >= R) {
-				sub = nx - (R-1);
-				over = true;
-			}
-			else if (ny < 0) {
-				sub = abs(ny);
-				over = true;
-			}
-			else if (ny >= C) {
-				sub = ny - (C-1);
-				over = true;
-			}
-
-			if (over == true) {
-				nx = nx + ((sub + sub) * dx[dir] * (-1));
-				ny = ny + ((sub + sub) * dy[dir] * (-1));
-			}
-
-			if (map2[nx][ny] < size) {
-				map2[nx][ny] = size;
-				s[k].x = nx;
-				s[k].y = ny;
-			}
-			*/
+			
 			
 		}
 		copyMap(map, map2);
