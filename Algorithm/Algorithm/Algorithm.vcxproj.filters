@@ -402,5 +402,8 @@
     <ClCompile Include="17143번_낚시왕.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="20056번_마법사 상어와 파이어볼.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
