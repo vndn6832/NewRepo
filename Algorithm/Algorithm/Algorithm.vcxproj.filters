@@ -405,5 +405,8 @@
     <ClCompile Include="20056번_마법사 상어와 파이어볼.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="14891번_톱니바퀴.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
