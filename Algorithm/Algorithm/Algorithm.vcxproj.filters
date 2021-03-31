@@ -408,5 +408,8 @@
     <ClCompile Include="14891번_톱니바퀴.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="13458번_시험 감독.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
