@@ -36,7 +36,7 @@ int main() {
 
 	//print();
 	while (1) {
-		cout << "==============================" << ans << " 번째" << "==========" << endl;
+		//cout << "==============================" << ans << " 번째" << "==========" << endl;
 		//벨트 회전
 		info tmp = v[2 * N - 1];
 		for (int i = 2 * N - 1; i > 0; i--) {
@@ -54,8 +54,8 @@ int main() {
 			v[nx].robot = true;
 		}
 
-		cout << "=======회전======" << endl;
-		print();
+		//cout << "=======회전======" << endl;
+		//print();
 		int size = r.size(); //***
 		for (int i = 0; i < size; i++) {
 			int x = r.front();
@@ -64,8 +64,8 @@ int main() {
 			v[x].robot = false;
 
 			if (x == N - 1) {
-				cout << "회전 후 내림 ==> " << x << endl;
-				print();
+				//cout << "회전 후 내림 ==> " << x << endl;
+				//print();
 				continue;
 			}
 
@@ -81,8 +81,8 @@ int main() {
 
 				if (nx == N - 1) {
 					v[nx].val -= 1;
-					cout << "이동 후 내림 ==> " << nx << endl;
-					print();
+					//cout << "이동 후 내림 ==> " << nx << endl;
+					//print();
 				}
 				else {
 					v[nx].robot = true;
@@ -104,8 +104,8 @@ int main() {
 			v[0].val -= 1;
 			r.push(0);
 		}
-		cout << "======================새로운 로봇 타기" << endl;
-		print();
+		//cout << "======================새로운 로봇 타기" << endl;
+		//print();
 
 		int cnt = 0;
 		for (int i = 0; i < 2 * N; i++) {
