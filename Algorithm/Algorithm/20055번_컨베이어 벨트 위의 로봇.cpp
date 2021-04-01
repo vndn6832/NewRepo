@@ -8,7 +8,7 @@ int N, K;
 struct info {
 	bool robot;
 	int val;
-	info(int a, int b) {
+	info(bool a, int b) {
 		robot = a;
 		val = b;
 	}
@@ -28,7 +28,7 @@ void print() {
 }
 int main() {
 	cin >> N >> K;
-	for (int i = 0; i < 2*N; i++) {
+	for (int i = 0; i < 2 * N; i++) {
 		int a;
 		cin >> a;
 		v.push_back(info(false, a));
@@ -36,10 +36,10 @@ int main() {
 
 	//print();
 	while (1) {
-
+		cout << "==============================" << ans << " 번째" << "==========" << endl;
 		//벨트 회전
 		info tmp = v[2 * N - 1];
-		for (int i = 2*N - 1; i > 0; i--) {
+		for (int i = 2 * N - 1; i > 0; i--) {
 			v[i] = v[i - 1];
 		}
 		v[0] = tmp;
@@ -54,8 +54,10 @@ int main() {
 			v[nx].robot = true;
 		}
 
-
-		for (int i = 0; i < r.size(); i++) {
+		cout << "=======회전======" << endl;
+		print();
+		int size = r.size(); //***
+		for (int i = 0; i < size; i++) {
 			int x = r.front();
 			r.pop();
 
@@ -67,20 +69,20 @@ int main() {
 				continue;
 			}
 
-			int nx = (x+1)%(2*N);
+			int nx = (x + 1) % (2 * N);
 
 			//if (nx == N - 1) {
 			//	cout << "이동 후 내림 ==> " << nx << endl;
 			//	print();
 			//	
 			//}
-			
+
 			if (v[nx].robot == false && v[nx].val >= 1) {
 
 				if (nx == N - 1) {
 					v[nx].val -= 1;
-						cout << "이동 후 내림 ==> " << nx << endl;
-						print();
+					cout << "이동 후 내림 ==> " << nx << endl;
+					print();
 				}
 				else {
 					v[nx].robot = true;
@@ -97,13 +99,12 @@ int main() {
 
 
 		}
-
-		if (v[0].robot == false && v[0].val !=0) {
+		if (v[0].robot == false && v[0].val != 0) {
 			v[0].robot = true;
 			v[0].val -= 1;
 			r.push(0);
 		}
-
+		cout << "======================새로운 로봇 타기" << endl;
 		print();
 
 		int cnt = 0;
@@ -111,7 +112,7 @@ int main() {
 			if (v[i].val == 0)
 				cnt++;
 		}
-		
+
 		if (cnt >= K) break;
 
 		ans++;
