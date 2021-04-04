@@ -4,7 +4,7 @@ using namespace std;
 int n;
 int main() {
 	cin >> n;
-	vector<vector<int>> arr(n, vector<int>(n, 0));
+	vector<vector< int > > arr(n, vector<int>(n, 0));
 
 	int cnt = 1;
 	for (int layer = 0; layer < (n + 1) / 2; layer++) {
