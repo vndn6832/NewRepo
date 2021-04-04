@@ -1,4 +1,4 @@
-#include<iostream>
+﻿#include<iostream>
 #include<vector>
 #include<queue>
 #include<cstring>
@@ -10,6 +10,7 @@ bool check[20][20]={false,};
 int dx[4] = {0,-1,0,1};
 int dy[4] = {-1,0,1,0};
 vector<pair<int, int> > v;
+bool flag = false;
 struct info{
     int x;
     int y;
@@ -39,8 +40,8 @@ int move(int x,int y, int num){
     int endY=  v[num].second;
 
     cout << "도착지: " << endX << " ,  "<<endY<<endl;
-    bool check2[N][N];
-    int dist[N][N];
+    bool check2[20][20];
+    int dist[20][20];
 
     queue<pair<int, int> > q;
     q.push(make_pair(x,y));
@@ -96,9 +97,10 @@ void bfs(int a, int b){
 
         if(map[x][y] >0){
         
-        cout << endl;
-        cout << x << " ,  "<<y<<endl;
-        cout << "손님과 거리: " << dis << endl;
+			int num = map[x][y];
+			cout << endl;
+			cout << x << " ,  "<<y<<endl;
+			cout << "손님과 거리: " << dis << endl;
             val -= dis;
             
 
@@ -109,7 +111,7 @@ void bfs(int a, int b){
                 break;
             }
              
-            int m = move(x,y,map[x][y]);
+            int m = move(x,y,num);
             cout<< "데려다 주는데 드는 연료: " << m <<endl;
             if( m == -1){ //도착지에 갈 수 없을때 
                 val = -1;
@@ -122,12 +124,12 @@ void bfs(int a, int b){
                 cout << "out3" <<endl;
                 break;
             }
-
-            x= v[map[x][y]].first;
-            y= v[map[x][y]].second;
+			map[x][y] = 0;
+            x= v[num].first; 
+            y= v[num].second;
             cout << "택시 위치: " <<x<<" , "<<y<<endl;
-            map[x][y] = 0;
-
+           
+			flag = true;
             val += 2 * m;
 
             cout << "데려다 준 뒤 총 연료: " << val << endl;
@@ -189,9 +191,18 @@ int main(){
         v[i].second = d-1;
     }
 
+	for (int i = 1; i <= M; i++)
+		cout << v[i].first << "---- " << v[i].second << endl;
+
+
     cout << "input done" << endl;
 
-    bfs(x,y);
+    bfs(x-1,y-1);
 
-    cout << val << endl;
+	if (flag == false) {
+		cout << -1 << endl;
+	}
+	else {
+		cout << val << endl;
+	}
 } 
