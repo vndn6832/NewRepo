@@ -63,28 +63,12 @@ int main() {
 					int dir = map[i][j][k].dir;
 
 
-					//speed = speed % N;
+					int speed2 = speed % N;
 
-					//int nx = (x + (dx[dir] * speed) + N) % N;
-					//int ny = (y + (dy[dir] * speed) + N) % N;
+					int nx = (x + (dx[dir] * speed2) + N) % N;
+					int ny = (y + (dy[dir] * speed2) + N) % N;
 
-					/*ÁÂÇ¥¼³Á¤*/
-					int nx = x + dx[dir] * speed % N;
-					int ny = y + dy[dir] * speed % N;
-
-					if (nx >= N) {
-						nx = nx % N;
-					}
-					else if (nx < 0) {
-						nx = N - (abs(nx) % N);
-					}
-
-					if (ny >= N) {
-						ny = ny % N;
-					}
-					else if (ny < 0) {
-						ny = N - (abs(ny) % N);
-					}
+		
 
 					//cout << nx << ", " << ny << endl;
 
