@@ -3,194 +3,187 @@
 #include<queue>
 #include<cstring>
 using namespace std;
-int N, M;
-long long val = 0;
-int x, y;
-int map[20][20];
-bool check[20][20] = { false, };
-int dx[4] = { 0,-1,0,1 };
-int dy[4] = { -1,0,1,0 };
-vector<pair<int, int> > v;
-struct info {
+struct info{
 	int x;
 	int y;
-	int dis;
+	int dist;
 	info(int a, int b, int c) {
 		x = a;
 		y = b;
-		dis = c;
+		dist = c;
 	}
 };
+
 struct compare {
 	bool operator()(info& i1, info& i2) {
-		if (i1.dis == i2.dis) {
+		if (i1.dist == i2.dist) {
 			if (i1.x == i2.x) {
 				return i1.y > i2.y;
 			}
-
 			return i1.x > i2.x;
-
 		}
-		return i1.dis > i2.dis;
+		return i1.dist > i2.dist;
 	}
 };
-int move(int a, int b, int num) {
-	//cout << "손님 데려다 주기 시작" << endl;
-	int endX = v[num].first;
-	int endY = v[num].second;
+int N, M, val;
+int map[20][20];
+int tx, ty;
+vector<pair<int, int>> people;
+int dx[4] = { -1,0,1,0 };
+int dy[4] = { 0,-1,0,1 };
+int move(int num) {
+	queue<pair<int, int>> q;
+	bool check[20][20] = { false, };
+	int dist[20][20] = { 0, };
 
-	//cout << "도착지: " << endX << " ,  " << endY << endl;
-	bool check2[20][20];
-	int dist[20][20];
-
-	queue<pair<int, int> > q;
-	q.push(make_pair(a, b));
-	check2[a][b] = true;
-	dist[a][b] = 0;
+	q.push(make_pair(tx, ty));
+	check[tx][ty] = true;
+	dist[tx][ty] = 0;
 
 
 	while (!q.empty()) {
-		int nowX = q.front().first;
-		int nowY = q.front().second;
+		int x = q.front().first;
+		int y = q.front().second;
 		q.pop();
-		if (nowX == endX && nowY == endY) {
-			return dist[nowX][nowY];
+
+		if (x == people[num].first && y == people[num].second) {
+			return dist[x][y];
 		}
 
 		for (int i = 0; i < 4; i++) {
-			int nextX = nowX + dx[i];
-			int nextY = nowY + dy[i];
+			int nx = x + dx[i];
+			int ny = y + dy[i];
 
-			if (nextX < 0 || nextX >= N || nextY < 0 || nextY >= N) continue;
-
-			if (map[nextX][nextY] != -1 && check2[nextX][nextY] != true) {
-				check2[nextX][nextY] = true;
-				dist[nextX][nextY] = dist[nowX][nowY] + 1;
-				q.push(make_pair(nextX, nextY));
-
+			if (nx < 0 || nx >= N || ny < 0 || ny >= N) continue;
+			if (map[nx][ny] != -1 && check[nx][ny] != true) {
+				check[nx][ny] = true;
+				q.push(make_pair(nx, ny));
+				dist[nx][ny] = dist[x][y] + 1;
 			}
-
 		}
-
 
 	}
 
 	return -1;
-
-
 }
-void bfs(int a, int b) {
+void bfs() {
 	priority_queue<info, vector<info>, compare> pq;
-	pq.push(info(a, b, 0));
-	check[a][b] = true;
-
+	bool check[20][20] = { false, };
+	pq.push(info(tx, ty, 0));
+	check[tx][ty] = true;
+		 
 	while (!pq.empty()) {
-		info tmp = info(0, 0, 0);
-		tmp = pq.top();
+		info tmp = pq.top();
 		pq.pop();
-
 		int x = tmp.x;
 		int y = tmp.y;
-		int dis = tmp.dis;
+		int dist = tmp.dist;
 
 		if (map[x][y] > 0) {
+
 			int num = map[x][y];
-			//cout << endl;
-			//cout << x << " ,  " << y << endl;
-			//cout << "손님과 거리: " << dis << endl;
-			val -= dis;
-
-
-			if (val <= 0) { //손님 데릴러 가는 도중에 연료 소진
-				val = -1;
-				//cout << "out1" << endl;
-
-				break;
-			}
-
-			int m = move(x, y, num);
-			//cout << "데려다 주는데 드는 연료: " << m << endl;
-			if (m == -1) { //도착지에 갈 수 없을때 
-				val = -1;
-				//cout << "out2" << endl;
-				break;
-			}
-			val -= m;
-			if (val < 0) {  //손님 데려다 주는 도중에 연료 소진
-				val = -1;
-				//cout << "out3" << endl;
-				break;
-			}
-
 			map[x][y] = 0;
-			x = v[num].first;
-			y = v[num].second;
-			//cout << "택시 위치: " << x << " , " << y << endl;
 
-			val += 2 * m;
+			//cout << x << ", " << y << " : " << num << " 번 손님" << endl;
+			val -= dist;
 
-			//cout << "데려다 준 뒤 총 연료: " << val << endl;
-			dis = 0;
-			memset(check, false, sizeof(check));
+			//cout << "픽업 후 연료: " << val << endl;
 
-			while (!pq.empty()) {
-				pq.pop();
+			if (val <= 0) {
+				//cout << "error 1" << endl;
+				val = -1;
+				break;
 			}
 
+			tx = x;
+			ty = y;
+
+
+			int way = move(num);
+			val -= way;
+			if (way < 0 || val < 0) {
+				//cout << "error 2" << endl;
+				val = -1;
+				break;
+			}
+
+			tx = people[num].first;
+			ty = people[num].second;
+
+			val += way * 2;
+
+			//cout << "도착지 픽업 후 연료 : " << val << endl;
+ 
 			M--;
 			if (M == 0) break;
 
-		}
+			dist = 0;
 
-		if (map[x][y] > 0) {
-			pq.push(info(x, y, 0));
-			continue;
+			memset(check, false, sizeof(check));
+			
+			while (!pq.empty()) pq.pop();
+
+			pq.push(info(tx, ty, 0));
+			x = tx;
+			y = ty;
+
 		}
 
 		for (int i = 0; i < 4; i++) {
 			int nx = x + dx[i];
 			int ny = y + dy[i];
 			if (nx < 0 || nx >= N || ny < 0 || ny >= N) continue;
-			if (map[nx][ny] != -1 && check[nx][ny] == false) {
+			if (map[nx][ny] != -1 && check[nx][ny] != true) {
 				check[nx][ny] = true;
-				pq.push(info(nx, ny, dis + 1));
+				pq.push(info(nx, ny, dist + 1));
 
 			}
+			
 		}
 
 	}
 
 }
 int main() {
-	cin >> N >> M >> val;
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < N; j++) {
-			cin >> map[i][j];
-			if (map[i][j] == 1) //벽
-				map[i][j] = -1;
+	//while (1) {
+		cin >> N >> M >> val;
+
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < N; j++) {
+
+				cin >> map[i][j];
+
+				if (map[i][j] == 1)
+					map[i][j] = -1;
+			}
 		}
-	}
 
-	for (int i = 0; i < M + 1; i++) {
-		v.push_back(make_pair(0, 0));
-	}
+		for (int i = 0; i < M + 1; i++) {
+			people.push_back(make_pair(0, 0));
+		}
 
-	cin >> x >> y;
 
-	for (int i = 1; i <= M; i++) {
-		int a, b, c, d;
-		cin >> a >> b >> c >> d;
-		map[a - 1][b - 1] = i; //승객 번호
-		v[i].first = c - 1;
-		v[i].second = d - 1;
-	}
+		cin >> tx >> ty;
+		tx -= 1;
+		ty -= 1;
 
-	//cout << "input done" << endl;
+		for (int i = 1; i <= M; i++) {
+			int a, b, c, d;
+			cin >> a >> b >> c >> d;
+			map[a - 1][b - 1] = i;
+			people[i].first = c - 1;
+			people[i].second = d - 1;
+		}
 
-	bfs(x-1, y-1);
 
-	if (M != 0)
-		cout << -1 << endl;
-	else
-		cout << val << endl;
+		bfs();
+
+		if (M != 0) {
+			cout << -1 << endl;
+		}
+		else
+		{
+			cout << val << endl;
+		}
+	//}
 }
