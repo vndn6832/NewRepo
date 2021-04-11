@@ -28,11 +28,11 @@ struct compare {
 int N, M, val;
 int map[20][20];
 int tx, ty;
-vector<pair<int, int>> people;
+vector<pair<int, int> > people;
 int dx[4] = { -1,0,1,0 };
 int dy[4] = { 0,-1,0,1 };
 int move(int num) {
-	queue<pair<int, int>> q;
+	queue<pair<int, int> > q;
 	bool check[20][20] = { false, };
 	int dist[20][20] = { 0, };
 
