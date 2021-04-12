@@ -1,5 +1,6 @@
 ﻿#include<iostream>
 #include<vector>
+#include<algorithm>
 using namespace std;
 int N, K;
 int map[12][12];
@@ -23,8 +24,11 @@ int numChk(int x, int y, int size, int num) {
 		if (map2[x][y][i] == num)
 			return i;
 	}
+	return -1;
 }
 int main() {
+
+	cout << "start" <<endl;
 	cin >> N >> K;
 
 	for (int i = 0; i < N; i++) {
@@ -42,14 +46,22 @@ int main() {
 
 	}
 
+	cout << "input end" << endl;
+
 	while (1) {
 		//말 이동
-
+		cout << "말 갯수: "<<v.size()<<endl;
+		bool over = false;
 		for (int i = 0; i < v.size(); i++) {
+			
 			vector<int> tmp; //움직일 말들
 			int x = v[i].x;
 			int y = v[i].y;
 			int dir = v[i].dir;
+
+			cout << x <<" , "<<y<<" , " << dir << "-- " <<map2[x][y].size() <<endl;
+			if(i==4)
+				cout << x <<", " << y << ", "<<endl;
 
 			//위에 말 있는지 찾기
 			int mSize = map2[x][y].size();
@@ -58,12 +70,21 @@ int main() {
 				int num = numChk(x,y,mSize,i+1);
 
 				if (num == mSize - 1) {//가장 위에 있는 경우
+					map2[x][y].pop_back();
 					tmp.push_back(i + 1);
 				}
 				else {
 
 					for (int n = num; n < mSize; n++) {
+
 						tmp.push_back(map2[x][y][n]);
+					}
+
+					int p = mSize - num;
+
+					while(p!=0){
+						map2[x][y].pop_back();
+						p--;
 					}
 
 				}
@@ -71,20 +92,99 @@ int main() {
 			}
 			else {
 				//1이면 그 칸에, 그 말만 있는 경우
+				map2[x][y].pop_back();
 				tmp.push_back(i + 1);
+				cout << "one"<<endl;
 			}
 
-			
+			bool stop = false;
+			int nx = x +dx[dir];
+			int ny = y +dy[dir];
+			//v[i].x = nx;
+			//v[i].y = ny;
 
+			if(nx <0 ||nx>=N || ny<0 ||ny >=N ||map[nx][ny] ==2){ //벗어나거나 파란색
+				if(dir == 0) dir=1;
+				else if(dir==1) dir=0;
+				else if(dir==2) dir=3;
+				else if(dir==3) dir=2;
+
+				nx = x + dx[dir];
+				ny = y + dy[dir];
+
+				//v[i].x = nx;
+				//v[i].y = ny;
+				v[i].dir = dir;
+
+				if(nx <0 ||nx>=N || ny<0 ||ny >=N ||map[nx][ny] ==2){
+					//v[i].x = x;
+					//v[i].y = y;
+					stop = true;
+				}
+
+				for(int t=0;t<tmp.size();t++){
+					map2[x][y].push_back(tmp[t]);
+
+				}
+				
+
+			}
+
+			if(stop == false){ 
+			
+				if(map[nx][ny] ==0){ //흰색
+					cout << "white ----"<< nx << ", " << ny << endl;
+					for(int t=0;t<tmp.size();t++){
+						map2[nx][ny].push_back(tmp[t]);
+						v[tmp[t]-1].x = nx;
+						v[tmp[t]-1].y = ny;
+					}
+
+				}else if(map[nx][ny] ==1){ //빨간색
+					cout << "red" <<endl;
+					sort(tmp.rbegin(),tmp.rend());
+
+					for(int t=0;t<tmp.size();t++){
+						map2[nx][ny].push_back(tmp[t]);
+						v[tmp[t]-1].x = nx;
+						v[tmp[t]-1].y = ny;
+					}
+
+				}
+			}
+
+			//4개 이상 쌓인게 있는지 확인
+			for(int a=0;a<N;a++){
+				for(int b=0;b<N;b++){
+					if(map2[a][b].size() >=4){
+						cout<< a << " , "<< b << " check --- "<< map2[a][b].size() << endl;
+						for(int z=0;z<map2[a][b].size();z++){
+							//cout<< " * " << map2[a][b][z] << " ";
+						}
+
+						cout << endl;
+						over = true;
+						break;
+					} 
+				}
+			}
+
+			cout << "over: "<<over<<endl;
+			if(over == true) break;
+
+			
 		}
 
 
 
-		//4개 이상 쌓인게 있는지 확인
+		if(over == true) break;
+
 
 		ans++;
 		if (ans > 1000) break;
 	}
+
+	cout << "hi" <<endl;
 
 	if (ans > 1000) {
 		cout << -1 << endl;
