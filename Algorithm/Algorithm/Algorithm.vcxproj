@@ -544,6 +544,7 @@
     <ClCompile Include="프로그래머스 폰켓몬.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="프로그래머스 피보나치 수.c" />
     <ClCompile Include="프로그래머스 피보나치 수.cpp" />
     <ClCompile Include="프로그래머스 행렬의 덧셈.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
