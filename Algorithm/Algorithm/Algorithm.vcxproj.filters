@@ -468,5 +468,8 @@
     <ClCompile Include="프로그래머스 최솟값 만들기.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="프로그래머스 주식가격.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
