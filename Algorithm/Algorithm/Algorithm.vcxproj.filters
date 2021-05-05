@@ -474,5 +474,8 @@
     <ClCompile Include="프로그래머스 N개의 최소공배수.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="프로그래머스 문자열 내림차순으로 배치하기.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
