@@ -477,5 +477,8 @@
     <ClCompile Include="프로그래머스 문자열 내림차순으로 배치하기.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="프로그래머스 가운데 글자 가져오기.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
