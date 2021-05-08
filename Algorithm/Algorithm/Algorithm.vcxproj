@@ -542,6 +542,7 @@
     <ClCompile Include="프로그래머스 주식가격.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="프로그래머스 직사각형 별찍기.c" />
     <ClCompile Include="프로그래머스 체육복.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
