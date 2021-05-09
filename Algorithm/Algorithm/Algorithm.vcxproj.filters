@@ -483,5 +483,8 @@
     <ClCompile Include="프로그래머스 직사각형 별찍기.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="프로그래머스 두 정수 사이의 합.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
