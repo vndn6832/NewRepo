@@ -501,6 +501,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="프로그래머스 두 정수 사이의 합.c" />
+    <ClCompile Include="프로그래머스 두 정수 사이의 합.cpp" />
     <ClCompile Include="프로그래머스 문자열 내 마음대로 정렬하기.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
