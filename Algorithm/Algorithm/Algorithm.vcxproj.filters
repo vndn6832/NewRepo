@@ -504,5 +504,8 @@
     <ClCompile Include="프로그래머스 내적.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="프로그래머스 핸드폰 번호 가리기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
