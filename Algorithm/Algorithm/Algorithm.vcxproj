@@ -545,6 +545,7 @@
     <ClCompile Include="프로그래머스 전화번호 목록.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="프로그래머스 정수 제곱근 판별.cpp" />
     <ClCompile Include="프로그래머스 주식가격.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
