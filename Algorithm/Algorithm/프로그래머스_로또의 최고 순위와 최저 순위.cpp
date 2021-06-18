@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <iostream>
 using namespace std;
 
 vector<int> solution(vector<int> lottos, vector<int> win_nums) {
@@ -45,6 +46,28 @@ vector<int> solution(vector<int> lottos, vector<int> win_nums) {
     return answer;
 }
 
-void main(){
-    solution( {44,1,0,0,31,25},{31,10,45,1,6,19});
+int main(){
+    vector<int> tmp;
+    vector<int> a;
+    a.push_back(44);
+    a.push_back(1);
+    a.push_back(0);
+    a.push_back(0);
+    a.push_back(31);
+    a.push_back(25);
+    
+    vector<int> b;
+    a.push_back(31);
+    a.push_back(10);
+    a.push_back(45);
+    a.push_back(1);
+    a.push_back(6);
+    a.push_back(19);
+    
+    tmp = solution( a,b);
+    for(int i=0; i<tmp.size();i++){
+        cout<< tmp[i] << " ";
+    }
+
+    return 0;
 }
