@@ -44,7 +44,7 @@ vector<string> solution(int n, vector<int> arr1, vector<int> arr2) {
 
 int main() {
 	vector<string> v;
-	v = solution(6, { 46,33,33,22,31,50 }, { 27,56,19,14,14,10 });
+	v = solution(6, {46,33,33,22,31,50 }, { 27,56,19,14,14,10 });
 	for (int i = 0; i < v.size(); i++) {
 		cout << v[i] << endl;
 	}
